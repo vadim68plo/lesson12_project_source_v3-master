@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, request, render_template
 import functions
 
 load_blueprint = Blueprint('load_blueprint', __name__)
@@ -23,8 +23,8 @@ def load_page():
 
     if len(_text) > 0:
         if picture:
-            picture.save(f"./uploads/{filename}")
-            _name_file = f"/uploads/{filename}"
+            picture.save(f"./uploads/images/{filename}")
+            _name_file = f"/uploads/images/{filename}"
 
             functions.load_post(_name_file, _text)
 

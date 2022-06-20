@@ -19,5 +19,11 @@ app.register_blueprint(load_blueprint)
 app.register_blueprint(load_post_blueprint)
 
 
+@app.route("/uploads/<path:path>")
+def static_dir(path):
+    return send_from_directory("uploads", path)
+
+
+
 app.run()
 
